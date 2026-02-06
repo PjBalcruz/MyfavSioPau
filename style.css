@@ -1,0 +1,117 @@
+@font-face {
+  font-family: 'FairwaterScript';
+  src: url('fonts/FairwaterScript.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'FairwaterScript', cursive;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
+  color: #fff;
+}
+
+
+.background {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  filter: blur(1.8px) brightness(0.7) saturate(1.2);
+  z-index: 0;
+}
+
+.bg-tile {
+  background-size: cover;
+  background-position: center;
+  animation: fade 12s infinite;
+}
+
+@keyframes fade {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  40% { opacity: 1; }
+  60% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+
+.container {
+  font-family: 'FairwaterScript', cursive;
+  position: relative;
+  z-index: 1;
+  max-width: 500px;
+  margin: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 235, 150, 0.95); 
+  color: #3a2a00; 
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(255, 200, 0, 0.6);
+  animation: pop 0.8s ease;
+  backdrop-filter: blur(4px);
+}
+
+
+@keyframes pop {
+  from {
+    transform: translateY(-50%) scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(-50%) scale(1);
+    opacity: 1;
+  }
+}
+
+h1, p {
+  margin-bottom: 20px;
+}
+
+
+button {
+  padding: 12px 28px;
+  border-radius: 30px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#music {
+  display: none;
+}
+
+.primary {
+  background: #ff5c8a;
+  color: #fff;
+}
+
+.primary:hover {
+  transform: scale(1.1);
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.no-btn {
+  background: #f0c040;
+  color: #3a2a00;
+}
+
+.hidden {
+  display: none;
+}
